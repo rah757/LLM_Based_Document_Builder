@@ -1,0 +1,38 @@
+.upload-zone {
+  border: 3px dashed #d0d7de;
+  border-radius: 12px;
+  padding: 60px 40px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #f8f9fa;
+}
+
+.upload-zone:hover {
+  border-color: #667eea;
+  background: #f0f4ff;
+}
+
+.upload-zone.drag-over {
+  border-color: #667eea;
+  background: #e0e7ff;
+  transform: scale(1.02);
+}
+
+.upload-icon {
+  font-size: 64px;
+  margin-bottom: 20px;
+}
+
+.upload-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.upload-hint {
+  font-size: 14px;
+  color: #666;
+}
+

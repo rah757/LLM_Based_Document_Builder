@@ -1,0 +1,52 @@
+{
+  "date": {
+    "regex_patterns": [
+      "\\b\\d{1,2}[/-]\\d{1,2}[/-]\\d{2,4}\\b",
+      "\\b\\d{4}-\\d{2}-\\d{2}\\b",
+      "\\b(January|February|March|April|May|June|July|August|September|October|November|December)\\s+\\d{1,2},?\\s+\\d{4}\\b"
+    ],
+    "normalization": "iso_date",
+    "description": "Calendar date in various formats"
+  },
+  "monetary_value": {
+    "regex_patterns": [
+      "(\\$|USD)\\s?\\d[\\d,]*(\\.[0-9]{1,2})?",
+      "\\b\\d[\\d,]*(\\.[0-9]{1,2})?\\s?(USD|dollars?)\\b"
+    ],
+    "normalization": "decimal",
+    "description": "US dollar monetary value"
+  },
+  "email": {
+    "regex_patterns": [
+      "[^@\\s]+@[^@\\s]+\\.[^@\\s]+"
+    ],
+    "normalization": "lowercase",
+    "description": "Email address"
+  },
+  "legal_name": {
+    "regex_patterns": [],
+    "normalization": "titlecase",
+    "description": "Legal entity or person name",
+    "min_length": 2
+  },
+  "jurisdiction": {
+    "regex_patterns": [],
+    "normalization": "none",
+    "description": "US state or jurisdiction",
+    "min_length": 2
+  },
+  "numeric": {
+    "regex_patterns": [
+      "\\b\\d+(\\.\\d+)?\\b"
+    ],
+    "normalization": "number",
+    "description": "Numeric value"
+  },
+  "text": {
+    "regex_patterns": [],
+    "normalization": "none",
+    "description": "Free text",
+    "min_length": 1
+  }
+}
+

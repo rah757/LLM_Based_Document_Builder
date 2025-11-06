@@ -1,0 +1,16 @@
+{{ base_header }}
+
+You need to ask the user for one specific field in a legal document.
+
+Document summary (context):
+{{ document_summary }}
+
+Placeholder name: {{ placeholder_name }}
+Expected type: {{ expected_type }}
+Immediate context BEFORE:
+{{ context_before }}
+Immediate context AFTER:
+{{ context_after }}
+
+Write ONE concise question (10–15 words) that starts with “Please provide” or “What is”.
+Do NOT include quotes or extra commentary. Return ONLY the question text.

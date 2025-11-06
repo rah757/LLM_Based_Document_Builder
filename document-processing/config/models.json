@@ -1,0 +1,10 @@
+{
+  "qa_model": "gpt-4o-mini",
+  "validation_model": "gpt-5-nano",
+  "embeddings_backend": "none",
+  "rag_top_k": 4,
+  "max_document_chars": 200000,
+  "max_validation_retries": 2,
+  "context_window_words": 20
+}
+

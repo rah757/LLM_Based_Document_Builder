@@ -1,0 +1,22 @@
+{{ base_header }}
+
+You must ask a clearer follow-up question for a legal document field.
+
+Document summary:
+{{ document_summary }}
+
+Placeholder: {{ placeholder_name }}
+Expected type: {{ expected_type }}
+
+Relevant context around the field:
+BEFORE:
+{{ context_before }}
+AFTER:
+{{ context_after }}
+
+Known filled facts so far (may help with phrasing):
+{{ facts_overlay_text }}
+
+Write ONE improved, very specific question (10–15 words) that includes exact format guidance if relevant (e.g., DD/MM/YYYY, USD).
+Start with “Sorry—” followed by the question.
+Return ONLY the question text, no quotes or commentary.

@@ -1,0 +1,45 @@
+{
+  "types": {
+    "legal_name": {
+      "keywords": ["name", "investor", "company", "issuer", "purchaser", "holder", "party", "parties"],
+      "description": "legal entity or person's name",
+      "examples": ["OpenAI Labs Inc.", "John Q. Public"]
+    },
+    "date": {
+      "keywords": ["date", "day", "effective date", "closing date"],
+      "description": "calendar date",
+      "examples": ["2026-05-05", "May 5, 2026", "05/05/2026"]
+    },
+    "monetary_value": {
+      "keywords": ["amount", "purchase", "price", "consideration", "payment", "purchase amount", "cap", "valuation"],
+      "description": "US dollar monetary value",
+      "examples": ["5000.00", "$5,000", "USD 5,000"]
+    },
+    "email": {
+      "keywords": ["email", "e-mail", "contact email"],
+      "description": "email address",
+      "examples": ["legal@company.com"]
+    },
+    "address": {
+      "keywords": ["address", "registered address", "principal place of business"],
+      "description": "mailing or registered address",
+      "examples": ["123 Main St, Springfield, IL 62701"]
+    },
+    "jurisdiction": {
+      "keywords": ["state", "jurisdiction", "governing law", "state of incorporation"],
+      "description": "US state or recognized jurisdiction",
+      "examples": ["Delaware", "California", "New York"]
+    },
+    "numeric": {
+      "keywords": ["number", "count", "shares", "quantity"],
+      "description": "numeric value",
+      "examples": ["42", "1000000"]
+    },
+    "text": {
+      "keywords": ["term", "notes", "other"],
+      "description": "free text",
+      "examples": ["Convertible preferred terms apply."]
+    }
+  },
+  "fallback_order": ["legal_name", "date", "monetary_value", "email", "jurisdiction", "address", "numeric", "text"]
+}

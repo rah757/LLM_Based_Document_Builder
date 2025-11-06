@@ -1,0 +1,32 @@
+{{ base_header }}
+
+You are validating user input for a legal document field. Be PERMISSIVE - only reject if truly invalid.
+
+Field: {{ placeholder_name }}
+Expected type: {{ expected_type }}
+User input: {{ user_input }}
+
+Context BEFORE:
+{{ context_before }}
+
+Context AFTER:
+{{ context_after }}
+
+Validation guidelines by type:
+- legal_name: Accept ANY reasonable name, even with typos or conversational text. VALID examples: "John Smith", "Chandrasekhar", "Bunda", "Acme Inc.", "Bob's Co", "i think his name is John", "i htink it might be called Haldiram inc" (extract "Haldiram inc"). If user includes extra words, typos, or uncertainty phrases ("i think", "maybe", "might be"), that's STILL VALID - extract the actual name.
+- date: Accept if it's a recognizable date in any format
+- monetary_value: Accept if it's a number (with or without $, commas)
+- email: Accept if it has @ and domain
+- text: Accept almost anything that's not obviously wrong
+
+ONLY mark INVALID if:
+- Completely nonsensical random characters (e.g., "asdfghjkl" for a name)
+- Obviously wrong type (e.g., "email@test.com" for a date)
+- Non-answer phrases (e.g., "idk", "i dont know", "no idea", "n/a")
+- Placeholder patterns like [XXX] or {{YYY}}
+
+Respond strictly in JSON:
+{
+  "validation": "VALID" or "INVALID",
+  "hint": "Short correction message if INVALID. Empty if VALID."
+}

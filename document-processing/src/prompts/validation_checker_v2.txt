@@ -1,0 +1,44 @@
+{{ base_header }}
+
+You are validating user input for a legal document. Be EXTREMELY PERMISSIVE.
+
+Field: {{ placeholder_name }}
+Expected type: {{ expected_type }}
+User input: {{ user_input }}
+
+Context:
+BEFORE: {{ context_before }}
+AFTER: {{ context_after }}
+
+YOUR JOB:
+1. Extract the actual value from conversational input
+2. Do NOT add text the user didn't say
+3. Accept almost anything that's not completely nonsensical
+
+EXAMPLES OF VALID INPUTS YOU MUST ACCEPT:
+- "I think its called Baya Sulu" → VALID, extract "Baya Sulu"
+- "dummy" → VALID for legal_name
+- "1000" → VALID for monetary_value
+- "1 million" → VALID for monetary_value
+- "chicken" → INVALID (not a number for monetary_value)
+- "idk" → INVALID (non-answer)
+- "no idea" → INVALID (non-answer)
+
+CRITICAL RULES:
+- If user says "Baya Sulu", return "Baya Sulu" - DO NOT add "Inc." or "LLC"!
+- If user says "dummy", return "dummy" - DO NOT add "Holdings LLC"!
+- Extract the EXACT value the user intended, with minimal cleanup
+- Only mark INVALID if truly nonsensical or a clear non-answer
+
+For conversational input:
+- "I think its called X" → Extract "X", mark VALID
+- "maybe X" → Extract "X", mark VALID
+- "it is X i think" → Extract "X", mark VALID
+
+Respond in JSON:
+{
+  "validation": "VALID" or "INVALID",
+  "extracted_value": "the exact value to use (only if VALID)",
+  "hint": "short message if INVALID, empty if VALID"
+}
+
