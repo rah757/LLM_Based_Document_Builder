@@ -1,0 +1,35 @@
+{
+  "patterns": [
+    {
+      "name": "square_brackets",
+      "description": "Square brackets format: [Placeholder Name]",
+      "regex": "\\[([A-Za-z0-9\\s_\\-]+)\\]",
+      "enabled": true
+    },
+    {
+      "name": "double_curly_braces",
+      "description": "Double curly braces format: {{Placeholder Name}}",
+      "regex": "\\{\\{([A-Za-z0-9\\s_\\-]+)\\}\\}",
+      "enabled": true
+    },
+    {
+      "name": "single_curly_braces",
+      "description": "Single curly braces format: {Placeholder Name}",
+      "regex": "\\{([A-Za-z0-9\\s_\\-]+)\\}",
+      "enabled": true
+    }
+  ],
+  "context_words_count": 20,
+  "notes": [
+    "You can add more patterns by adding new objects to the 'patterns' array",
+    "Set 'enabled' to false to disable a pattern without deleting it",
+    "The regex must have a capture group () to extract the placeholder name",
+    "Patterns are processed in order from top to bottom"
+  ],
+  "examples": {
+    "square_brackets": "[Investor Name], [Company Address], [Date]",
+    "double_curly_braces": "{{Investment Amount}}, {{Effective Date}}",
+    "single_curly_braces": "{Payment Method}, {Contact Email}"
+  }
+}
+
